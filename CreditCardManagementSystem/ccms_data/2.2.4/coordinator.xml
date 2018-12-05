@@ -1,0 +1,18 @@
+<coordinator-app xmlns ="uri:oozie:coordinator:0.2" name =
+"credit_card_system_coord" frequency = "0/20 8-17 ? * MON-FRI" start="2018-12-01T8:00Z" end =
+"2025-03-29T18:00Z" timezone="America/New_York">
+
+<controls>
+  <timeout>1</timeout>
+  <concurrency>1</concurrency>
+  <execution>FIFO</execution>
+  <throttle>1</throttle>
+</controls>
+
+<action>
+  <workflow>
+    <app-path>${nameNode}/user/maria_dev/Credit_Card_System/workflow_incr.xml</app-path>
+  </workflow>
+</action>  
+
+</coordinator-app>
